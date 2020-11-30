@@ -162,7 +162,7 @@ jobs:
           command: pip install -e .
       - run:
           name: Install build deps
-          command: pip install nbconvert==5.4.0 tornado==5.1.1 mkdocs git+https://github.com/kipoi/pydoc-markdown@master
+          command: pip install nbconvert==5.4.0 tornado==5.1.1 mkdocs==1.0.4 git+https://github.com/kipoi/pydoc-markdown@master
       - run:
           name: Build docs
           command: |
@@ -245,6 +245,7 @@ workflows:
               only:
                 - master
                 - test_deployment_script
+                - fix-docs-ci
       - test-deploy-pypi:
           requires:
             - test-py36-yml
